@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="datasource=D:\ITI\myProjects\OfflineCourseManager\OfflineCourseManager\OfflineDb.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clip">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Duration" Type="integer" Nullable="false" />
+    <Property Name="Module_Fk" Type="integer" Nullable="false" />
+    <Property Name="IsStarted" Type="integer" Nullable="false" />
+    <Property Name="IsFinished" Type="integer" Nullable="false" />
+    <Property Name="Thumbnail" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="IsFinished" Type="integer" Nullable="false" />
+    <Property Name="IsStarted" Type="integer" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Course_Fk" Type="integer" Nullable="false" />
+    <Property Name="IsStarted" Type="integer" />
+    <Property Name="IsFinished" Type="integer" />
+    <Property Name="Duration" Type="integer" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityContainer Name="mainModelStoreContainer">
+    <EntitySet Name="Clip" EntityType="Self.Clip" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" store:Type="Tables" />
+    <EntitySet Name="Module" EntityType="Self.Module" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

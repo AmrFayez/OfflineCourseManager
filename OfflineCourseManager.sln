@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineCourseManager.Core", "OfflineCourseManager.Core\OfflineCourseManager.Core.csproj", "{CA984A48-7955-413B-9B98-1DDFAD1C1BEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineCourseManager", "OfflineCourseManager.Core\OfflineCourseManager.csproj", "{CA984A48-7955-413B-9B98-1DDFAD1C1BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineCourseManager.Presentation", "OfflineCourseManager.Presentation\OfflineCourseManager.Presentation.csproj", "{5C670E37-4A15-4E8F-8BB5-7582A2F0C505}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CA984A48-7955-413B-9B98-1DDFAD1C1BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA984A48-7955-413B-9B98-1DDFAD1C1BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA984A48-7955-413B-9B98-1DDFAD1C1BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C670E37-4A15-4E8F-8BB5-7582A2F0C505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C670E37-4A15-4E8F-8BB5-7582A2F0C505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C670E37-4A15-4E8F-8BB5-7582A2F0C505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C670E37-4A15-4E8F-8BB5-7582A2F0C505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

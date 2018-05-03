@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="datasource=D:\ITI\myProjects\OfflineCourseManager\OfflineCourseManager\OfflineDb.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Duration" Type="integer" Nullable="false" />
+          <Property Name="Module_Fk" Type="integer" Nullable="false" />
+          <Property Name="IsStarted" Type="integer" Nullable="false" />
+          <Property Name="IsFinished" Type="integer" Nullable="false" />
+          <Property Name="Thumbnail" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="EndDate" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="FullPath" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="IsFinished" Type="integer" Nullable="false" />
+          <Property Name="IsStarted" Type="integer" Nullable="false" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="EndDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FullPath" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Course_Fk" Type="integer" Nullable="false" />
+          <Property Name="IsStarted" Type="integer" />
+          <Property Name="IsFinished" Type="integer" />
+          <Property Name="Duration" Type="integer" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="EndDate" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="FullPath" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityContainer Name="mainModelStoreContainer">
+          <EntitySet Name="Clip" EntityType="Self.Clip" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" store:Type="Tables" />
+          <EntitySet Name="Module" EntityType="Self.Module" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Duration" Type="Int64" Nullable="false" />
+          <Property Name="Module_Fk" Type="Int64" Nullable="false" />
+          <Property Name="IsStarted" Type="Int64" Nullable="false" />
+          <Property Name="IsFinished" Type="Int64" Nullable="false" />
+          <Property Name="Thumbnail" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EndDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FullPath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsFinished" Type="Int64" Nullable="false" />
+          <Property Name="IsStarted" Type="Int64" Nullable="false" />
+          <Property Name="StartDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EndDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullPath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Course_Fk" Type="Int64" Nullable="false" />
+          <Property Name="IsStarted" Type="Int64" />
+          <Property Name="IsFinished" Type="Int64" />
+          <Property Name="Duration" Type="Int64" />
+          <Property Name="StartDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="EndDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="FullPath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="OCMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clips" EntityType="Self.Clip" />
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="Modules" EntityType="Self.Module" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="OCMEntities">
+          <EntitySetMapping Name="Clips">
+            <EntityTypeMapping TypeName="mainModel.Clip">
+              <MappingFragment StoreEntitySet="Clip">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Module_Fk" ColumnName="Module_Fk" />
+                <ScalarProperty Name="IsStarted" ColumnName="IsStarted" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="mainModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="IsStarted" ColumnName="IsStarted" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="mainModel.Module">
+              <MappingFragment StoreEntitySet="Module">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Course_Fk" ColumnName="Course_Fk" />
+                <ScalarProperty Name="IsStarted" ColumnName="IsStarted" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

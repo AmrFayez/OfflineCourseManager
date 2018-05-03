@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OfflineCourseManager.Core.Application;
+using OfflineCourseManager.Core.DB.DAL;
+using RPG.DB.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +13,12 @@ namespace OfflineCourseManager.Core
     {
         static void Main(string[] args)
         {
+            string dirPath= @"D:\PluralSight Course\1";
 
+            Manager m = new Manager(dirPath, new OCMEntities());
+            m.Retrive();
+            Console.Read();
+           
         }
     }
 
